@@ -1,0 +1,61 @@
+---
+import siteConfig from '../site.config.js';
+---
+
+<footer class="site-footer">
+      <h4>Contacts</h4>
+      <p>Email: <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></p>
+      {siteConfig.contact.github && (
+        <p>GitHub: <a href={`https://github.com/${siteConfig.contact.github}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.github}</a></p>
+      )}
+      {siteConfig.contact.twitter && (
+        <p>Twitter: <a href={`https://twitter.com/${siteConfig.contact.twitter}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.twitter}</a></p>
+      )}
+      {siteConfig.contact.instagram && (
+        <p>Instagram: <a href={`https://instagram.com/${siteConfig.contact.instagram}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.instagram}</a></p>
+      )}
+      {siteConfig.contact.whatsapp && (
+        <p>WhatsApp: <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.whatsapp}</a></p>
+      )}
+  <div class="footer-bottom">
+    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: rgba(var(--accent-dark), 0.8); /* Dark background */
+    color: rgba(var(--accent-light), 0.9); /* Light text color */
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+
+
+  .site-footer a {
+    color: rgba(var(--accent-light), 0.9); /* Light text color */
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .site-footer a:hover {
+    color: rgba(var(--accent-light), 1); /* Brighter color on hover */
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(var(--accent-light), 0.2); /* Light top border */
+    padding-top: 1rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+</style>
