@@ -1,0 +1,14 @@
+<section id="profile-readme"></section>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+async function loadReadme() {
+  const url = "https://raw.githubusercontent.com/immodded/immodded/main/README.md";
+  const res = await fetch(url);
+  const markdown = await res.text();
+  document.getElementById("profile-readme").innerHTML =
+    marked.parse(markdown);
+}
+
+loadReadme();
+</script>
